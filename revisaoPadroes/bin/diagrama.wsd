@@ -1,0 +1,74 @@
+@startuml digrama
+
+class App {
+}
+
+class Venda {
+    - ArrayList<ItemVenda> itens
+    - Usuario usuario
+    + getItens(): ArrayList<ItemVenda>
+    + setItens(itens: ArrayList<ItemVenda>): void
+    + getUsuario(): Usuario
+    + setUsuario(usuario: Usuario): void
+}
+
+class Usuario {
+    - int id
+    - String nome
+    - int idade
+    - int numeroDependentes
+    + getId(): int
+    + setId(id: int): void
+    + getNome(): String
+    + setNome(nome: String): void
+    + getIdade(): int
+    + setIdade(idade: int): void
+    + getNumeroDependentes(): int
+    + setNumeroDependentes(numeroDependentes: int): void
+}
+
+class Categoria {
+    - int id
+    - String nome
+    - int desconto
+    + getId(): int
+    + setId(id: int): void
+    + getNome(): String
+    + setNome(nome: String): void
+    + getDesconto(): int
+    + setDesconto(desconto: int): void
+}
+
+class Produto {
+    - int id
+    - String descricao
+    - int quantidade
+    - int preco
+    - Categoria categoria
+    + getId(): int
+    + setId(id: int): void
+    + getDescricao(): String
+    + setDescricao(descricao: String): void
+    + getQuantidade(): int
+    + setQuantidade(quantidade: int): void
+    + getPreco(): int
+    + setPreco(preco: int): void
+    + getCategoria(): Categoria
+    + setCategoria(categoria: Categoria): void
+}
+
+class ItemVenda {
+    - Produto produto
+    - int quantidade
+    + getProduto(): Produto
+    + setProduto(produto: Produto): void
+    + getQuantidade(): int
+    + setQuantidade(quantidade: int): void
+}
+
+Venda --> Usuario
+Venda --> ItemVenda
+ItemVenda --> Produto
+Produto --> Categoria
+
+@enduml
