@@ -23,7 +23,7 @@ public class DemoSpringDataJpa1Application {
 	}
 
 	@Bean
-	public CommandLineRunner dmeo(CashCardRepository cashCardRepository) {
+	public CommandLineRunner demo(CashCardRepository cashCardRepository) {
 		return (args) -> {
 			log.info("Saving CashCards");
 			log.info("-------------------------------");
