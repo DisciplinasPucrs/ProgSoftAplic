@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Tarefas</h1>
+    </header>
+    <div th:insert="~{parts/navigation::navigation}"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Concluída</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tarefa : ${tarefas}">
+                <td th:text="${tarefa.id}">1</td>
+                <td th:text="${tarefa.descricao}">Uma tarefa</td>
+                <td th:text="${tarefa.concluida}">false</td>
+            </tr>
+        </tbody>
+    </table>
+    <div th:insert="~{parts/footer::footer}"></div>
+</body>
+</html>
