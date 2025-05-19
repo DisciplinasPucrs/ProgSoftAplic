@@ -7,10 +7,10 @@
 </head>
 <body>
     <header>
+        <div th:insert="~{parts/navigation :: navigation}"></div>
         <h1>Bem-vindo ao Demo Spring MVC com Thymeleaf!</h1>
         <p>Esta é uma demonstração de como usar o Thymeleaf com o Spring MVC.</p>
     </header>
-    <div th:insert="~{parts/navigation :: navigation}"></div>
     <div th:insert="~{parts/footer :: footer}"></div>
 </body>
 </html>

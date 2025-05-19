@@ -7,9 +7,9 @@
 </head>
 <body>
     <header>
+        <div th:insert="~{parts/navigation::navigation}"></div>
         <h1>Lista de Tarefas</h1>
     </header>
-    <div th:insert="~{parts/navigation::navigation}"></div>
     <table>
         <thead>
             <tr>
@@ -19,18 +19,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:if="${#lists.isEmpty(tarefas)}"> <!-- ${tarefas.empty} -->
+            <tr th:if="${tarefas.empty}">
                 <td colspan="3">Nenhuma tarefa encontrada.</td>
             </tr>
             <tr th:each="tarefa : ${tarefas}">
                 <td th:text="${tarefa.id}">1</td>
                 <td th:text="${tarefa.descricao}">Uma tarefa</td>
-                <!--<td th:text="${tarefa.concluida}">false</td>-->
                 <td>
                     <input type="checkbox" th:checked="${tarefa.concluida}" disabled="disabled" checked="false"/>
                 </td>
             </tr>
-            <tr th:if="${!#lists.isEmpty(tarefas)}">
+            <tr th:if="${!tarefas.empty}">
                 <td colspan="3">Total de tarefas: <span th:text="${#lists.size(tarefas)}"></span></td>
             </tr>
         </tbody>
