@@ -14,8 +14,9 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .securityMatcher("/alo")
-            .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/ola/**").permitAll()
+                .anyRequest().authenticated())
             .httpBasic(withDefaults())
             .formLogin(withDefaults());
         return http.build();
