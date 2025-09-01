@@ -1,7 +1,7 @@
 package com.softaplic.demosecurity4;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
+import java.security.Principal;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +18,12 @@ public class AloMundoController {
     }
 
     @GetMapping("/private")
-    public String alo(@AuthenticationPrincipal UserDetails userDetails) {
-        return "Alô, " + userDetails.getUsername() + "!";
+    public String alo(Principal principal) {
+        return "Alô, " + principal.getName() + "!";
     }
 
     @GetMapping("/private-scoped")
-    public String aloScoped(@AuthenticationPrincipal UserDetails userDetails) {
-        return "Alô, " + userDetails.getUsername() + "! (escopo read:messages)";
+    public String aloScoped(Principal principal) {
+        return "Alô, " + principal.getName() + "! (escopo read:messages)";
     }
 }
