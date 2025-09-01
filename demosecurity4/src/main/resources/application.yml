@@ -7,6 +7,6 @@ server:
 okta:
   oauth2:
     # Replace with the domain of your Auth0 tenant.
-    issuer: https://dev-nknjwcnj.us.auth0.com
+    issuer: https://dev-nknjwcnj.us.auth0.com/
     # Replace with the API Identifier for your Auth0 API.
     audience: https://softaplic.com/alomundo
