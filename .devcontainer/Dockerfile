@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/java:25-bullseye
+FROM mcr.microsoft.com/devcontainers/java:25-bookworm
 
 # Update apt
 RUN apt update -y
