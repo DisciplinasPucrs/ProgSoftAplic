@@ -1,4 +1,4 @@
-package julioapm.demosecurity2;
+package softaplic.demosecurity2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

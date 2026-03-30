@@ -1,4 +1,4 @@
-package julioapm.demosecurity2;
+package softaplic.demosecurity2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
