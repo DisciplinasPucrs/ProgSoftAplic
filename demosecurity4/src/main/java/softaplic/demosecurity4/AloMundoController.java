@@ -1,10 +1,12 @@
-package com.softaplic.demosecurity4;
+package softaplic.demosecurity4;
 
-import java.security.Principal;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.auth0.spring.boot.Auth0AuthenticationToken;
 
 @RestController
 @CrossOrigin(origins = "*" )
@@ -17,12 +19,11 @@ public class AloMundoController {
     }
 
     @GetMapping("/private")
-    public String alo(Principal principal) {
-        return "Alô, " + principal.getName() + "!";
+    public String alo(Authentication authentication) {
+        Auth0AuthenticationToken auth0Token = (Auth0AuthenticationToken) authentication;
+        var name = auth0Token.getName();
+        var scopes = auth0Token.getAuthorities();
+        return "Alô, " + name + "!";
     }
 
-    @GetMapping("/private-scoped")
-    public String aloScoped(Principal principal) {
-        return "Alô, " + principal.getName() + "! (escopo read:messages)";
-    }
 }
