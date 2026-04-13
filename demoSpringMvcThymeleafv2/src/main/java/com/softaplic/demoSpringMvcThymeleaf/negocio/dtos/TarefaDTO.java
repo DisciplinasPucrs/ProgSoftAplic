@@ -1,4 +1,4 @@
-package julioapm.demoSpringMvcThymeleaf.negocio.dtos;
+package com.softaplic.demoSpringMvcThymeleaf.negocio.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -28,6 +28,4 @@ public class TarefaDTO {
     public void setConcluida(boolean concluida) {
         this.concluida = concluida;
     }
-
-    
 }
