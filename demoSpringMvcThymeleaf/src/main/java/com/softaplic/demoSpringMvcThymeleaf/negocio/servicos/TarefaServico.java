@@ -1,12 +1,12 @@
-package julioapm.demoSpringMvcThymeleaf.negocio.servicos;
+package com.softaplic.demoSpringMvcThymeleaf.negocio.servicos;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import julioapm.demoSpringMvcThymeleaf.negocio.dtos.TarefaDTO;
-import julioapm.demoSpringMvcThymeleaf.persistencia.entidades.Tarefa;
-import julioapm.demoSpringMvcThymeleaf.persistencia.repositorios.TarefaRepositorio;
+import com.softaplic.demoSpringMvcThymeleaf.negocio.dtos.TarefaDTO;
+import com.softaplic.demoSpringMvcThymeleaf.persistencia.entidades.Tarefa;
+import com.softaplic.demoSpringMvcThymeleaf.persistencia.repositorios.TarefaRepositorio;
 
 @Service
 public class TarefaServico {
@@ -33,5 +33,4 @@ public class TarefaServico {
         List<Tarefa> tarefas = tarefaRepositorio.findAll();
         return tarefas.stream().map(this::converterParaDTO).toList();
     }
-
 }

@@ -1,4 +1,4 @@
-package julioapm.demoSpringMvcThymeleaf.persistencia.entidades;
+package com.softaplic.demoSpringMvcThymeleaf.persistencia.entidades;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
