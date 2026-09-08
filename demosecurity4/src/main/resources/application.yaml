@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: demosecurity4
-auth0:
-  domain: dev-nknjwcnj.us.auth0.com
-  audience: https://softaplic.com/alomundo
-debug: true
